@@ -1,0 +1,193 @@
+public class Circle {
+    private double radius;
+
+    // Конструктор
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Методы для получения и изменения свойств окружности
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    // Методы для расчета площади и длины окружности
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public double getCircumference() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+public class CircleTest {
+    public static void main(String[] args) {
+        // Создание объекта окружности
+        Circle circle = new Circle(5.0);
+
+        // Получение и вывод свойств окружности
+        double radius = circle.getRadius();
+        System.out.println("Радиус окружности: " + radius);
+
+        // Изменение свойства окружности
+        circle.setRadius(7.0);
+
+        // Расчет и вывод площади и длины окружности
+        double area = circle.getArea();
+        double circumference = circle.getCircumference();
+        System.out.println("Площадь окружности: " + area);
+        System.out.println("Длина окружности: " + circumference);
+    }
+}
+-------------------------------------------------------------------------------
+public class Human {
+    private Head head;
+    private Leg leftLeg;
+    private Leg rightLeg;
+    private Hand leftHand;
+    private Hand rightHand;
+    
+    public Human() {
+        this.head = new Head();
+        this.leftLeg = new Leg();
+        this.rightLeg = new Leg();
+        this.leftHand = new Hand();
+        this.rightHand = new Hand();
+    }
+    
+    public void walk() {
+        leftLeg.move();
+        rightLeg.move();
+    }
+    
+    public void wave() {
+        leftHand.wave();
+        rightHand.wave();
+    }
+    
+    // Дополнительные методы для доступа к частям тела
+    public Head getHead() {
+        return head;
+    }
+    
+    public Leg getLeftLeg() {
+        return leftLeg;
+    }
+    
+    public Leg getRightLeg() {
+        return rightLeg;
+    }
+    
+    public Hand getLeftHand() {
+        return leftHand;
+    }
+    
+    public Hand getRightHand() {
+        return rightHand;
+    }
+}
+
+public class Head {
+    public void shake() {
+        System.out.println("Голова качается");
+    }
+}
+
+public class Leg {
+    public void move() {
+        System.out.println("Нога движется");
+    }
+}
+
+public class Hand {
+    public void wave() {
+        System.out.println("Рука машет");
+    }
+}
+
+public class HumanTest {
+    public static void main(String[] args) {
+        Human human = new Human();
+        
+        // Получение частей тела и вызов их методов
+        human.getHead().shake();
+        
+        human.getLeftLeg().move();
+        human.getRightLeg().move();
+        
+        human.getLeftHand().wave();
+        human.getRightHand().wave();
+    }
+}
+-------------------------------------------------------------------------------
+public class Book {
+    private String author;
+    private String title;
+    private int year;
+
+    // Конструктор класса Book
+    public Book(String author, String title, int year) {
+        this.author = author;
+        this.title = title;
+        this.year = year;
+    }
+
+    // Методы для получения значений свойств
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    // Методы для изменения значений свойств
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+}
+
+public class BookTest {
+    public static void main(String[] args) {
+        // Создание объекта класса Book
+        Book book = new Book("Пудж", "Как стать рекрутом", 2023);
+
+        // Получение значений свойств
+        String author = book.getAuthor();
+        String title = book.getTitle();
+        int year = book.getYear();
+        System.out.println("Автор: " + author);
+        System.out.println("Название книги: " + title);
+        System.out.println("Год написания: " + year);
+
+        // Изменение значений свойств
+        book.setAuthor("Инвокер");
+        book.setTitle("Как играть на пианино");
+        book.setYear(2024);
+
+        // Повторное получение значений свойств
+        author = book.getAuthor();
+        title = book.getTitle();
+        year = book.getYear();
+        System.out.println("Автор: " + author);
+        System.out.println("Название книги: " + title);
+        System.out.println("Год написания: " + year);
+    }
+}
