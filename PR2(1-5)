@@ -1,0 +1,71 @@
+public class Main {
+        public static void main(String[] args) {
+            // Задаем массив чисел
+            int[] array = {5, 6, 13, 14, 24};
+
+            // Вычисляем сумму чисел с помощью цикла for
+            int sumFor = 0;
+            for (int i = 0; i < array.length; i++) {
+                sumFor = sumFor + array[i];
+            }
+            System.out.println("Сумма чисел с помощью цикла for: " + sumFor);
+
+            // Вычисляем сумму чисел с помощью цикла while
+            int sumWhile = 0;
+            int j = 0;
+            while (j < array.length) {
+                sumWhile = sumWhile + array[j];
+                j++;
+            }
+            System.out.println("Сумма чисел с помощью цикла while: " + sumWhile);
+
+            // Вычисляем сумму чисел с помощью цикла do while
+            int sumDoWhile = 0;
+            int k = 0;
+            do {
+                sumDoWhile = sumDoWhile + array[k];
+                k++;
+            } while (k < array.length);
+            System.out.println("Сумма чисел с помощью цикла do while: " + sumDoWhile);
+        }
+}
+------------------------------------------------------------------------------------------
+//java -Dfile.encoding=UTF-8 C:\Users\ACER1\IdeaProjects\untitled2\src\Main.java test hui amsad weqwe
+public class Main {
+        public static void main(String[] args) {
+            // Цикл for для прохода по аргументам командной строки
+            for (int i = 0; i < args.length; i++) {
+                System.out.println("Аргумент " + (i + 1) + ": " + args[i]);
+            }
+        }
+}
+------------------------------------------------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Первые 10 чисел гармонического ряда:");
+
+        for (int i = 1; i <= 10; i++) {
+            double harmonic = 1.0 / i;
+            System.out.printf("%1$.2f%n", harmonic);
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        int number = 5; // Вводимое число для вычисления факториала
+
+        long factorial = calculateFactorial(number);
+        System.out.println("Факториал числа " + number + " равен " + factorial);
+    }
+
+    public static long calculateFactorial(int number) {
+        long factorial = 1;
+
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+
+        return factorial;
+    }
+}
